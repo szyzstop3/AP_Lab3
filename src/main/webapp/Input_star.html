@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        function Varification(){
+            var EPpatt = /^[\s]{1,}$/;
+            var ALpatt = /^[A-z]+$/;
+            var FCpatt = /^[A-Z]{1}[A-z]*$/;
+
+            //Student number verify code
+            //var SNpatt = /^jp2018[\d]{6}$/;
+
+
+            if(document.forms[0].elements[0].value.length==0||EPpatt.test(document.forms[0].elements[0].value)){
+                alert("Name must not be left empty!");
+                return false;
+            }else if(!ALpatt.test(document.forms[0].elements[0].value)){
+                alert("Please use letter only!");
+                return false;
+            }else if(!FCpatt.test(document.forms[0].elements[0].value)){
+                alert("Please use a capital letter for the first letter!");
+                return false;
+            }else if(document.forms[0].elements[1].checked==false&&document.forms[0].elements[2].checked==false){
+                alert("Select a radio button for your gender!");
+                return false;
+            }else
+
+                return true;
+        }
+    </script>
+
+</head>
+<body>
+<form action="./Horoscope" onsubmit="return Varification()">
+    Input your name:<input type="text" name="name"><br>
+    Input your sex: Male<input type="radio" name="sex" value="Male">Famale<input type="radio" name="sex" value="Famale"><br>
+    Select your Zodiac sign:<select name="Zodiac">
+    <option value="1" selected>Aries</option>
+    <option value="2">Taurus</option>
+    <option value="3">Gemini</option>
+    <option value="4">Cancer</option>
+    <option value="5">Leo</option>
+    <option value="6">Virgo</option>
+    <option value="7">Libra</option>
+    <option value="8">Scorpio</option>
+    <option value="9">Sagittarius</option>
+    <option value="10">Capricorn</option>
+    <option value="11">Aquarius</option>
+    <option value="12">Pisces</option>
+</select><br>
+    <input type="submit" value="Submit"><input type="reset" value="Reset">
+</form>
+</body>
+</html>
