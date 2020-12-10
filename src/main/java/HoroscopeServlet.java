@@ -16,6 +16,26 @@ public class HoroscopeServlet extends HttpServlet {
                     "your horoscope can be given!");
             return;
         }
+
+        out.write("JAVA:"+"<br>"+"<br>");
+
+        //JAVA method
+        out.write("Hallow "+req.getParameter("name")+"<br>");
+        if(req.getParameter("sex").equals("Male")){
+            if(Integer.parseInt(req.getParameter("Zodiac"))<=6){
+                out.write("You will have a long life.");
+            }else out.write("You will have a rich life.");
+        }else if(req.getParameter("sex").equals("Famale")){
+            if(Integer.parseInt(req.getParameter("Zodiac"))<=6){
+                out.write("You will find a tall handsome stranger.");
+            }else out.write("You will have six children.");
+        }else out.write("ERROR");
+
+
+        out.write("<br>"+"<br>");
+        out.write("JS:"+"<br>"+"<br>");
+
+
         //js function
         out.write("<html><body>\n" +
                 "Hallow \n" +req.getParameter("name")+"<br>"+
@@ -37,17 +57,7 @@ public class HoroscopeServlet extends HttpServlet {
                 "\n" +
                 "</body></html>");
 
-        //resp_out
-//        out.write("Hallow "+req.getParameter("name")+"<br>");
-//        if(req.getParameter("sex").equals("Male")){
-//            if(Integer.parseInt(req.getParameter("Zodiac"))<=6){
-//                out.write("You will have a long life.");
-//            }else out.write("You will have a rich life.");
-//        }else if(req.getParameter("sex").equals("Famale")){
-//            if(Integer.parseInt(req.getParameter("Zodiac"))<=6){
-//                out.write("You will find a tall handsome stranger.");
-//            }else out.write("You will have six children.");
-//        }else out.write("ERROR");
+
     }
 
 
