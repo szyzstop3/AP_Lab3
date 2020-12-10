@@ -7,7 +7,7 @@ import java.io.PrintWriter;
 
 public class HoroscopeServlet extends HttpServlet {
     @Override
-    protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException, IOException {
         resp.setContentType("text/html");
         PrintWriter out = resp.getWriter();
 
@@ -17,7 +17,7 @@ public class HoroscopeServlet extends HttpServlet {
             return;
         }
         //js function
-        out.write("<body>\n" +
+        out.write("<html><body>\n" +
                 "Hallow \n" +req.getParameter("name")+"<br>"+
                 "<script>\n" +
                 "        function displayHoroscope(gender, sign){\n" +
@@ -35,7 +35,7 @@ public class HoroscopeServlet extends HttpServlet {
                 "    </script>\n" +
                 "    \n" +
                 "\n" +
-                "</body>");
+                "</body></html>");
 
         //resp_out
 //        out.write("Hallow "+req.getParameter("name")+"<br>");
