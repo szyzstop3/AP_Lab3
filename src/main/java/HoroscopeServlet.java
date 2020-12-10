@@ -7,7 +7,7 @@ import java.io.PrintWriter;
 
 public class HoroscopeServlet extends HttpServlet {
     @Override
-    protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         resp.setContentType("text/html");
         PrintWriter out = resp.getWriter();
 
@@ -49,4 +49,6 @@ public class HoroscopeServlet extends HttpServlet {
 //            }else out.write("You will have six children.");
 //        }else out.write("ERROR");
     }
+
+
 }
